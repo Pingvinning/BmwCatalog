@@ -25,7 +25,7 @@ public class MainController {
         return carService.findByName(name);
     }
 
-    @GetMapping("/madels/{id}")
+    @GetMapping("/models/id/{id}")
     public FullCarDTO getCarById(@PathVariable("id") int id) {
         return carService.findById(id);
     }
