@@ -25,7 +25,7 @@ public class CarServiceImpl implements CarService {
         }
 
         List<CarListDTO> carListDTO = carEntity.stream()
-                .map(car -> new CarListDTO(car.getId(), car.getName(), car.getGeneration()))
+                .map(car -> new CarListDTO(car.getId(), car.getName(), car.getGeneration(), car.getYearStart()))
                 .toList();
 
         return carListDTO;

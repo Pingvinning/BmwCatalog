@@ -10,5 +10,6 @@ public class CarListDTO {
     private int id;
     private String name;
     private String generation;
+    private int yearStart;
 }
 
