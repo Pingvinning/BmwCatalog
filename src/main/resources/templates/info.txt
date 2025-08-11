@@ -6,7 +6,9 @@ Spring MVC или контроллеры подставляют данные в 
 Обычно тут:
 
 templates/
- ├── index.html          → главная страница
- ├── series.html         → список моделей серии
- ├── model.html          → страница конкретной модели
- └── fragments/          → куски HTML (шапка, подвал)
+ ├── home.html           → главная страница
+ ├── about.html          → про нашу BMW
+ ├── aboutus.html        → про нашу контору и контакт данные
+ ├── aboutusad.html      → админка для контактов
+ ├── cataloge.html       → каталог BMW
+ └── login.html          → логин для админов
