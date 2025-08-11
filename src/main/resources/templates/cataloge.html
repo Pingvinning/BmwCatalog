@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог M-серии | BMW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/cataloge.css">
+  <link rel="stylesheet" href="../static/css/base.css">
+</head>
+<body>
+  <!-- Header -->
+<header class="header">
+  <div class="container header__inner">
+    <a href="home.html" class="logo" aria-label="BMW Каталог — на главную">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+        <circle cx="30" cy="30" r="28" stroke="#FFCC00" stroke-width="4"/>
+        <path d="M15 20L30 40L45 20" stroke="#FFCC00" stroke-width="4" stroke-linecap="round"/>
+        <path d="M20 30L40 30" stroke="#FFCC00" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <div class="header__center">
+      <nav class="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="home.html">Главная</a></li>
+          <li><a class="nav__link" href="cataloge.html">Каталог M-серии</a></li>
+          <li><a class="nav__link" href="about.html">О BMW M</a></li>
+          <li><a class="nav__link" href="aboutus.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__actions">
+      <a href="login.html" class="header__login" title="Вход/регистрация админа" aria-label="Вход/регистрация админа">
+        <!-- простая иконка пользователя -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.418 0-8 2.239-8 5v1a1 1 0 001 1h14a1 1 0 001-1v-1c0-2.761-3.582-5-8-5z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero__title">BMW M Series</h1>
+      <p class="hero__subtitle">Официальный каталог легендарных моделей M-серии. Откройте для себя сочетание роскоши, технологий и невероятной производительности.</p>
+      <a href="#catalog" class="btn">Исследовать модели</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Catalog Section -->
+    <section class="catalog" id="catalog">
+      <h2 class="catalog__title">Каталог M-серии</h2>
+      
+      <!-- Model Selection -->
+      <div class="model-selection">
+        <h3>Выберите модель:</h3>
+        <div class="model-tabs">
+          <button class="model-tab active" data-model="M2">M1</button>
+          <button class="model-tab" data-model="M3">M2</button>
+          <button class="model-tab" data-model="M3">M3</button>
+          <button class="model-tab" data-model="M4">M4</button>
+          <button class="model-tab" data-model="M5">M5</button>
+          <button class="model-tab" data-model="M8">M8</button>
+        </div>
+      </div>
+      
+      <!-- Models Container -->
+      <div class="model-list">
+        <!-- Models will be loaded here -->
+        <div class="loading">
+          <div class="loading-spinner"></div>
+          <p>Загрузка моделей...</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Model Detail Section (initially hidden) -->
+    <section class="model-detail" id="model-detail" style="display: none;">
+      <!-- Model details will be loaded here -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <p>
+        <strong>BMW Каталог</strong><br>
+        Официальный дилер BMW в России<br>
+        Москва, Ленинградский проспект, 39А
+      </p>
+      
+      <ul class="footer__links">
+        <li><a href="#">О компании</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="#">Тест-драйв</a></li>
+        <li><a href="#">Сервис</a></li>
+      </ul>
+      
+      <ul class="footer__links">
+        <li><a href="#">Политика конфиденциальности</a></li>
+        <li><a href="#">Условия использования</a></li>
+        <li><a href="#">Карта сайта</a></li>
+      </ul>
+      
+      <div class="copyright">
+        <p>© 2025 BMW Каталог. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../static/js/cataloge.js" defer></script>
+</body>
+</html>
