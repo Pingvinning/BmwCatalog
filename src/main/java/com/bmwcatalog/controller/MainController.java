@@ -1,15 +1,15 @@
 package com.bmwcatalog.controller;
 
 import com.bmwcatalog.dto.CarListDTO;
+import com.bmwcatalog.dto.ContactsUserDTO;
 import com.bmwcatalog.dto.FullCarDTO;
-import com.bmwcatalog.entity.CarEntity;
+import com.bmwcatalog.entity.ContactsUserEntity;
 import com.bmwcatalog.service.CarService;
+import com.bmwcatalog.service.ContactsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -18,6 +18,9 @@ public class MainController {
 
     @Autowired
     private CarService carService;
+
+    @Autowired
+    private ContactsUserService contactsUserService;
 
     @GetMapping("/models/{name}")
     public List<CarListDTO> getCarByName(@PathVariable String name) {
@@ -28,5 +31,16 @@ public class MainController {
     public FullCarDTO getCarById(@PathVariable("id") int id) {
         return carService.findById(id);
     }
+
+    @PostMapping("/contacts")
+    public void addContacts(@RequestBody ContactsUserEntity contactsUserEntity) {
+        contactsUserService.save(contactsUserEntity);
+    }
+
+    @GetMapping("/admin/contacts")
+    private List<ContactsUserDTO> getContacts(){
+        return contactsUserService.findAll();
+    }
+
 
 }

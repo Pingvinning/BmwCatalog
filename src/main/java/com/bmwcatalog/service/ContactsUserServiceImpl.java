@@ -1,0 +1,39 @@
+package com.bmwcatalog.service;
+
+import com.bmwcatalog.dto.ContactsUserDTO;
+import com.bmwcatalog.entity.ContactsUserEntity;
+import com.bmwcatalog.repository.ContactsUserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ContactsUserServiceImpl implements ContactsUserService {
+
+    @Autowired
+    private ContactsUserRepository contactsUserRepository;
+
+    @Override
+    public void save(ContactsUserEntity contactsUserEntity) {
+        contactsUserRepository.save(contactsUserEntity);
+    }
+
+    @Override
+    public List<ContactsUserDTO> findAll() {
+        List<ContactsUserEntity> contactsUserEntities = contactsUserRepository.findAll();
+        List<ContactsUserDTO> contactsUserDTOs = contactsUserEntities
+                .stream()
+                .map(contacts -> new ContactsUserDTO(
+                        contacts.getId(),
+                        contacts.getName(),
+                        contacts.getEmail(),
+                        contacts.getPhone()))
+                .toList();
+        return contactsUserDTOs;
+    }
+
+
+}

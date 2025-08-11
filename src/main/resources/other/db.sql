@@ -1,3 +1,7 @@
+select *
+from models;
+
+
 create database bmw;
 
 CREATE TABLE models
@@ -42,7 +46,7 @@ VALUES
 ('M3', 'G80 Competition', 'BMW M3 G80 Competition — более мощная версия с 510 л.с. и улучшенной динамикой.', 2021, 'Седан', '3.0L I6', 510, '8AT', 'RWD/AWD', 3.9, 290, 10.8),
 
 -- M4
-('M4', 'F82/F83', 'BMW M4 F82 — купе и кабриолет, пришедшие на смену M3 Coupe/Cabrio.', 2014, 'Купе/Кабриолет', '3.0L I6', 431, '6MT/7DCT', 'RWD', 4.3, 250, 10.5),
+('M4', 'F82 F83', 'BMW M4 F82 — купе и кабриолет, пришедшие на смену M3 Coupe/Cabrio.', 2014, 'Купе/Кабриолет', '3.0L I6', 431, '6MT/7DCT', 'RWD', 4.3, 250, 10.5),
 ('M4', 'F82 GTS', 'BMW M4 F82 GTS — трековая версия с водно-метанольным впрыском и 500 л.с.', 2016, 'Купе', '3.0L I6', 500, '7DCT', 'RWD', 3.8, 305, 11.2),
 ('M4', 'F82 CS', 'BMW M4 F82 CS — облегчённая версия с доработанным мотором и подвеской.', 2018, 'Купе', '3.0L I6', 460, '7DCT', 'RWD', 3.9, 280, 10.5),
 ('M4', 'G82', 'BMW M4 G82 — новое поколение с увеличенной мощностью и доступным полным приводом.', 2021, 'Купе', '3.0L I6', 480, '6MT/8AT', 'RWD/AWD', 4.2, 290, 10.2),
@@ -71,3 +75,15 @@ VALUES
 
 SELECT *
 FROM models;
+
+
+
+create table contacts_user(
+                              id SERIAL PRIMARY KEY ,
+                              name varchar(128),
+                              email varchar(128),
+                              phone varchar(12)
+);
+
+SELECT *
+FROM contacts_user;
