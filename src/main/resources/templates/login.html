@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Регистрация админа | BMW Каталог</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+</head>
+<body>
+  <!-- Синяя шапка (как везде) -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="home.html" class="logo" aria-label="BMW Каталог — на главную">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" stroke="#FFCC00" stroke-width="4"/>
+          <path d="M15 20L30 40L45 20" stroke="#FFCC00" stroke-width="4" stroke-linecap="round"/>
+          <path d="M20 30L40 30" stroke="#FFCC00" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <div class="header__center">
+        <nav class="nav" aria-label="Главное меню">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="home.html">Главная</a></li>
+            <li><a class="nav__link" href="cataloge.html">Каталог M-серии</a></li>
+            <li><a class="nav__link" href="about.html">О BMW M</a></li>
+            <li><a class="nav__link" href="aboutus.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__actions">
+        <a href="login.html" class="header__login" title="Вход/регистрация админа" aria-label="Вход/регистрация админа">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.418 0-8 2.239-8 5v1a1 1 0 001 1h14a1 1 0 001-1v-1c0-2.761-3.582-5-8-5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:40px 0 60px; max-width:720px;">
+    <h1 style="margin-bottom:8px;">Регистрация администратора</h1>
+    <p style="margin-bottom:18px;">Создайте учётную запись администратора. (Демо: сохраняем локально без бэкенда.)</p>
+
+    <form id="adminRegForm" class="contact-form" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="field">
+        <label for="firstName">Имя</label>
+        <input id="firstName" type="text" placeholder="Иван" required>
+      </div>
+      <div class="field">
+        <label for="lastName">Фамилия</label>
+        <input id="lastName" type="text" placeholder="Петров" required>
+      </div>
+      <div class="field" style="grid-column:1/-1;">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="admin@example.com" required>
+      </div>
+      <div class="field">
+        <label for="password">Пароль</label>
+        <input id="password" type="password" placeholder="Минимум 8 символов" required>
+      </div>
+      <div class="field">
+        <label for="confirm">Повтор пароля</label>
+        <input id="confirm" type="password" placeholder="Ещё раз пароль" required>
+      </div>
+
+      <div style="grid-column:1/-1; display:flex; align-items:center; gap:10px;">
+        <input type="checkbox" id="showPass">
+        <label for="showPass">Показать пароль</label>
+      </div>
+
+      <div class="actions" style="grid-column:1/-1; display:flex; gap:12px; flex-wrap:wrap;">
+        <button type="submit" class="btn btn--primary">Зарегистрироваться</button>
+        <button type="button" id="clearForm" class="btn">Очистить</button>
+        <a href="aboutusad.html" class="btn">К админ-странице контактов</a>
+      </div>
+      <p id="regStatus" style="grid-column:1/-1; display:none;"></p>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p><strong>BMW Каталог</strong><br>Официальный дилер BMW в России<br>Москва, Ленинградский проспект, 39А</p>
+      <ul class="footer__links">
+        <li><a href="about-bmw.html">О компании</a></li>
+        <li><a href="aboutus.html">Контакты</a></li>
+        <li><a href="cataloge.html">Тест-драйв</a></li>
+        <li><a href="cataloge.html">Сервис</a></li>
+      </ul>
+      <ul class="footer__links">
+        <li><a href="#">Политика конфиденциальности</a></li>
+        <li><a href="#">Условия использования</a></li>
+        <li><a href="#">Карта сайта</a></li>
+      </ul>
+      <div class="copyright"><p>© 2025 BMW Каталог. Все права защищены.</p></div>
+    </div>
+  </footer>
+
+  <script src="../static/js/base.js" defer></script>
+  <script src="../static/js/login.js" defer></script>
+</body>
+</html>
