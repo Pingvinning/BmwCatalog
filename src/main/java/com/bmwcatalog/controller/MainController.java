@@ -6,12 +6,14 @@ import com.bmwcatalog.dto.FullCarDTO;
 import com.bmwcatalog.entity.ContactsUserEntity;
 import com.bmwcatalog.service.CarService;
 import com.bmwcatalog.service.ContactsUserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.List;
 
+@Tag(name = "main_controller")
 @RestController
 @RequestMapping("/bmw")
 public class MainController {
