@@ -44,5 +44,9 @@ public class MainController {
         return contactsUserService.findAll();
     }
 
+    @PatchMapping("/admin/contacts/{id}/flag")
+    public ContactsUserDTO toggleFlag(@PathVariable int id) {
+        return contactsUserService.toggleFlag(id);
+    }
 
 }

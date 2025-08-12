@@ -37,4 +37,20 @@ public class ContactsUserServiceImpl implements ContactsUserService {
     }
 
 
+    @Override
+    public ContactsUserDTO toggleFlag(int id) {
+        ContactsUserEntity entity = contactsUserRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Contact not found"));
+
+        entity.setFlag(!entity.isFlag());
+        contactsUserRepository.save(entity);
+
+        return new ContactsUserDTO(
+                entity.getId(),
+                entity.getName(),
+                entity.getEmail(),
+                entity.getPhone(),
+                entity.isFlag()
+        );
+    }
 }
