@@ -30,7 +30,8 @@ public class ContactsUserServiceImpl implements ContactsUserService {
                         contacts.getId(),
                         contacts.getName(),
                         contacts.getEmail(),
-                        contacts.getPhone()))
+                        contacts.getPhone(),
+                        contacts.isFlag()))
                 .toList();
         return contactsUserDTOs;
     }
