@@ -9,7 +9,6 @@ import com.bmwcatalog.service.AdminService;
 import com.bmwcatalog.service.CarService;
 import com.bmwcatalog.service.ContactsUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +19,16 @@ import java.util.List;
 @Tag(name = "main_controller")
 @RestController
 @RequestMapping("/bmw")
-@RequiredArgsConstructor
 public class MainController {
 
-    private final CarService carService;
-    private final ContactsUserService contactsUserService;
-    private final AdminService adminService;
+    @Autowired
+    private CarService carService;
+
+    @Autowired
+    private ContactsUserService contactsUserService;
+
+    @Autowired
+    private AdminService adminService;
 
     @GetMapping("/models/{name}")
     public List<CarListDTO> getCarByName(@PathVariable String name) {
@@ -56,10 +59,10 @@ public class MainController {
     }
 
 
-//    @PostMapping("/new")
-//    public String newAdmin(@RequestBody Admins admin) {
-//        adminService.addAdmin(admin);
-//        return "Admin added";
-//    }
+    @PostMapping("/new")
+    public String newAdmin(@RequestBody Admins admin) {
+        adminService.addAdmin(admin);
+        return "Admin added";
+    }
 
 }
