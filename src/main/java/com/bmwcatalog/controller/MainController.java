@@ -48,7 +48,7 @@ public class MainController {
 
     @GetMapping("/admin/contacts")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    private List<ContactsUserDTO> getContacts(){
+    public List<ContactsUserDTO> getContacts(){
         return contactsUserService.findAll();
     }
 
@@ -59,10 +59,10 @@ public class MainController {
     }
 
 
-    @PostMapping("/new")
-    public String newAdmin(@RequestBody Admins admin) {
-        adminService.addAdmin(admin);
-        return "Admin added";
-    }
+//    @PostMapping("/new")
+//    public String newAdmin(@RequestBody Admins admin) {
+//        adminService.addAdmin(admin);
+//        return "Admin added";
+//    }
 
 }
