@@ -124,6 +124,13 @@ create table contacts_user
     flag  boolean default false
 );
 
+create table admin
+(
+    id SERIAL PRIMARY KEY,
+    username varchar(255),
+    password varchar(255),
+    roles varchar(255)
+)
 
 SELECT *
 FROM contacts_user;

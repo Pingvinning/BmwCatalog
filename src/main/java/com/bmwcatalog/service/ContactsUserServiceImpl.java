@@ -6,9 +6,9 @@ import com.bmwcatalog.repository.ContactsUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 public class ContactsUserServiceImpl implements ContactsUserService {

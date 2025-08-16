@@ -19,6 +19,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<CarListDTO> findByName(String name) {
+        name = name.toUpperCase();
         List<CarEntity> carEntity = carRepository.findByName(name);
         if (carEntity.isEmpty()) {
             throw new CarGlobalException("Server Error (Don't have data in database(CarService - carEntity)) Don't have name "+ name);
